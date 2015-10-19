@@ -1,3 +1,11 @@
+
+
+/*
+U+1F4F7 camera
+
+	U+1F527	\xF0\x9F\x94\xA7	wrench
+  U+1F529	\xF0\x9F\x94\xA9	nut and bolt
+*/
 body {
   font-family: -apple-system, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.5;
@@ -26,10 +34,39 @@ ul {
   list-style: none;
   padding: 0;
   display: flex;
+  transition: color .2s;
+}
+ul:hover {
+  color: #B9B9B9;
 }
 li {
-  margin-left: 1em
+  margin-left: 1.8em;
+  position: relative;
 }
 li:first-of-type {
   margin-left: 0;
+}
+li:hover {
+  color: #000;
+}
+li:hover:before {
+  opacity: 1;
+  transform: translateX(1.3em);
+}
+li:before {
+  opacity: 0;
+  position: absolute;
+  top: .05em;
+  right: 0;
+  transform: translateX(0);
+  transition: opacity .2s, transform .2s;
+}
+.instagram:before {
+  content: "\01F4F7"
+}
+.twitter:before {
+  content: "\01F4FB"
+}
+.github:before {
+  content: "\01F529";
 }
