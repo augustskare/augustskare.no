@@ -15,6 +15,13 @@ h1, p, ul {
   font-weight: 300;
   margin: 0 0 1rem;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+p a {
+  background-color: #FFE778;
+}
 ul {
   list-style: none;
   padding: 0;
