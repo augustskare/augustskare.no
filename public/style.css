@@ -1,0 +1,28 @@
+body {
+  font-family: -apple-system, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-size: 100%;
+  text-size-adjust: 100%;
+  background: #FFF;
+  color: #000;
+  margin: 2.4em auto 0;
+  padding: 0 5%;
+  max-width: 500px;
+}
+h1, p, ul {
+  font-size: 1.25em;
+  font-weight: 300;
+  margin: 0 0 1rem;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+li {
+  margin-left: 1em
+}
+li:first-of-type {
+  margin-left: 0;
+}
