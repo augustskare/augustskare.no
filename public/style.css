@@ -28,7 +28,11 @@ a {
   color: inherit;
 }
 p a {
-  background-color: #FFE778;
+  background-color: #FFF5C6;
+  transition: background-color .2s
+}
+p a:hover {
+  background-color: #FFEC91;
 }
 ul {
   list-style: none;
