@@ -73,7 +73,7 @@ li:before {
   content: "\01F426"
 }
 .github:before {
-  content: "\01F48E";
+  content: "\01F527";
 }
 @media (max-width: 550px) {
   ul {
