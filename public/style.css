@@ -1,11 +1,3 @@
-
-
-/*
-U+1F4F7 camera
-
-	U+1F527	\xF0\x9F\x94\xA7	wrench
-  U+1F529	\xF0\x9F\x94\xA9	nut and bolt
-*/
 body {
   font-family: -apple-system, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.5;
@@ -33,6 +25,9 @@ p a {
 }
 p a:hover {
   background-color: #FFEC91;
+}
+span {
+  color: #A2A2A2;
 }
 ul {
   list-style: none;
