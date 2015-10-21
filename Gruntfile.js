@@ -24,7 +24,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'inline',
-    'htmlmin'
+    'htmlmin',
+    'copy'
   ])
 
 };
