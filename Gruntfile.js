@@ -23,9 +23,11 @@ module.exports = function(grunt) {
   grunt.initConfig(config);
 
   grunt.registerTask('build', [
+    'clean',
+    'copy',
+    'postcss',
     'inline',
-    'htmlmin',
-    'copy'
+    'htmlmin'
   ])
 
 };

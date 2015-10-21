@@ -3,7 +3,7 @@ module.exports = {
     options:{
       cssmin: true
     },
-    src: 'public/index.html',
+    src: 'build/index.html',
     dest: 'build/index.html'
   }
 }
