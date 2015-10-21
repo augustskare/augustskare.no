@@ -69,3 +69,22 @@ li:before {
 .github:before {
   content: "\01F48E";
 }
+@media (max-width: 550px) {
+  ul {
+    display: block;
+  }
+  ul:hover {
+    color: inherit;
+  }
+  li {
+    margin-left: 0;
+  }
+  li:before {
+    position: static;
+    opacity: 1;
+    padding-right: .3em;
+  }
+  li:hover:before {
+    transform: translateX(0);
+  }
+}
