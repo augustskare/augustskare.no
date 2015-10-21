@@ -19,11 +19,14 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a:focus {
+  outline: none;
+}
 p a {
   background-color: #FFF5C6;
   transition: background-color .2s
 }
-p a:hover {
+p a:hover, p a:focus {
   background-color: #FFEC91;
 }
 span {
@@ -41,6 +44,9 @@ ul:hover {
 li {
   margin-left: 2.2em;
   position: relative;
+}
+li a:focus {
+  color: #B9B9B9;
 }
 li:first-of-type {
   margin-left: 0;
