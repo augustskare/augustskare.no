@@ -15,6 +15,7 @@ module.exports = function(grunt) {
 
   var config = {
     pkg: grunt.file.readJSON('./package.json'),
+    aws: grunt.file.readJSON('./aws-conf.json')
   };
 
   require('time-grunt')(grunt);
@@ -28,6 +29,8 @@ module.exports = function(grunt) {
     'postcss',
     'inline',
     'htmlmin'
-  ])
+  ]);
+
+  grunt.registerTask('deploy', ['build', 'aws_s3']);
 
 };
