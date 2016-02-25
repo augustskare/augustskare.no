@@ -1,20 +1,14 @@
 @font-face {
   font-family: 'Butler';
-  src: url('/fonts/butler_regular.eot');
-  src: local('☺︎'),
-    url("/fonts/butler_regular.woff") format("woff"),
-    url("/fonts/butler_regular.otf") format("opentype"),
-    url("/fonts/butler_regular.svg#grablau") format("svg");
+  src: url('/fonts/butler_regular.woff2') format('woff2'),
+       url("/fonts/butler_regular.woff") format("woff"),
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: 'Butler';
-  src: url('/fonts/butler_extrabold.eot');
-  src: local('☺︎'),
-    url("/fonts/butler_extrabold.woff") format("woff"),
-    url("/fonts/butler_extrabold.otf") format("opentype"),
-    url("/fonts/butler_extrabold.svg#grablau") format("svg");
+  src: url('/fonts/butler_extrabold.woff2') format('woff2'),
+       url("/fonts/butler_extrabold.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
