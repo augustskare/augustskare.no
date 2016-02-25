@@ -24,11 +24,13 @@ module.exports = function(grunt) {
   grunt.initConfig(config);
 
   grunt.registerTask('build', [
-    'clean',
+    'clean:build',
     'copy',
     'postcss',
     'inline',
-    'htmlmin'
+    'processhtml',
+    'htmlmin',
+    'uglify'
   ]);
 
   grunt.registerTask('deploy', ['build', 'aws_s3']);
