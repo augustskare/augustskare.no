@@ -1,0 +1,6 @@
+{
+  "name": "augustskare",
+  "dependencies": {
+    "webfontloader": "~1.6.21"
+  }
+}

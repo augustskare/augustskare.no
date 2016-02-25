@@ -3,3 +3,4 @@ node_modules
 build
 deploy.sh
 aws-conf.json
+bower_components

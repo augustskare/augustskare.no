@@ -1,26 +1,5 @@
-@font-face {
-  font-family: 'Butler';
-  src: url('/fonts/butler_regular.eot');
-  src: local('☺︎'),
-    url("/fonts/butler_regular.woff") format("woff"),
-    url("/fonts/butler_regular.otf") format("opentype"),
-    url("/fonts/butler_regular.svg#grablau") format("svg");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Butler';
-  src: url('/fonts/butler_extrabold.eot');
-  src: local('☺︎'),
-    url("/fonts/butler_extrabold.woff") format("woff"),
-    url("/fonts/butler_extrabold.otf") format("opentype"),
-    url("/fonts/butler_extrabold.svg#grablau") format("svg");
-  font-weight: 500;
-  font-style: normal;
-}
-
 body {
-  font-family: 'Butler', serif;
+  font-family: serif;
   font-size: 100%;
   line-height: 1.6;
   font-weight: 200;
@@ -32,6 +11,9 @@ body {
   margin: 7vh auto 0;
   width: 520px;
   max-width: 90%;
+}
+.wf-active body {
+  font-family: 'Butler', serif;
 }
 .main {
   border-left: 1px solid rgba(0,0,0, .06);
