@@ -4,7 +4,7 @@ module.exports = {
       {
         expand: true,
         cwd: 'public/',
-        src: ['**', 'style.css', '!bower_components/**', '!font.js'],
+        src: ['**', 'style.css', '!bower_components/**', '!app.js'],
         dest: 'build/'
       }
     ]
