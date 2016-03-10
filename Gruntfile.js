@@ -27,10 +27,11 @@ module.exports = function(grunt) {
     'clean:build',
     'copy',
     'postcss',
-    'inline',
+    'cssmin',
     'processhtml',
     'htmlmin',
-    'uglify'
+    'uglify',
+    'clean:afterBuild'
   ]);
 
   grunt.registerTask('deploy', ['build', 'aws_s3']);

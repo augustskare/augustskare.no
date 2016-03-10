@@ -1,6 +1,6 @@
 {
   "name": "augustskare",
   "dependencies": {
-    "webfontloader": "~1.6.21"
+    "fontfaceobserver": "^1.6.5"
   }
 }

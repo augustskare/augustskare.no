@@ -1,7 +1,7 @@
 module.exports = {
   build: {
     files: {
-      'build/webfontloader.js': 'public/bower_components/webfontloader/webfontloader.js'
+      'build/font.min.js': ['public/bower_components/fontfaceobserver/fontfaceobserver.js', 'public/font.js']
     }
   }
 }

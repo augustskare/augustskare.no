@@ -9,7 +9,9 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="theme-color" content="#FFD750">
     <link rel="mask-icon" href="/icon.svg" color="black">
-    <link rel="stylesheet" href="./style.css?__inline=true">
+    <!-- build:css inline -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- /build -->
   </head>
   <body>
     <h1>August Skare</h1>
@@ -22,9 +24,9 @@
         <li class="github"><a href="http://github.com/augustskare">GitHub</a></li>
       </ul>
     </div>
-    <!-- build:[src] / -->
-    <script src="/bower_components/webfontloader/webfontloader.js"></script>
+    <!-- build:js /font.min.js -->
+      <script src="/bower_components/fontfaceobserver/fontfaceobserver.js"></script>
+      <script src="/font.js"></script>
     <!-- /build -->
-    <script>WebFont.load({ custom: { families: ['Butler'], urls: ['/fonts.css'] }});</script>
   </body>
 </html>
