@@ -10,8 +10,7 @@ self.addEventListener("install", function(event) {
         '/fonts/butler_extrabold.woff',
         '/app.min.js'
       ]);
-    })
-    .then(function() {})
+    });
   );
 });
 
@@ -42,8 +41,7 @@ self.addEventListener('fetch', function(event) {
 
 
 self.addEventListener("activate", function(event) {
-  event.waitUntil(
-    caches
+  event.waitUntil(caches
       .keys()
       .then(function (keys) {
         return Promise.all(
@@ -53,7 +51,6 @@ self.addEventListener("activate", function(event) {
             return caches.delete(key);
           })
         );
-      }).then(function() {
-    })
+      });
   );
 });
