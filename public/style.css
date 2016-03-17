@@ -1,32 +1,21 @@
-@font-face {
-  font-family: 'Butler';
-  src: url("/fonts/butler_regular.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Butler';
-  src: url("/fonts/butler_extrabold.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
 body {
   font-family: serif;
   font-size: 100%;
-  line-height: 1.6;
-  font-weight: 200;
+  line-height: 1.4;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  font-size: 100%;
   text-size-adjust: 100%;
   background-color: #F3F3F3;
   color: #2D2D2D;
-  margin: 7vh auto 0;
+  margin-top: 9vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
   width: 520px;
   max-width: 90%;
 }
 .wf-active body {
-  font-family: 'Butler', serif;
+  font-family: "minion-pro", serif;
 }
 .main {
   border-left: 1px solid rgba(0,0,0, .06);
@@ -35,24 +24,25 @@ body {
 }
 
 h1 {
-  font-size: 2.3em;
-  font-weight: 500;
+  font-size: 2.5em;
+  font-weight: 600;
   font-style: normal;
-  margin: 0 0 .7rem;
+  margin: 0 0 .5rem;
   padding-left: 1rem;
 }
 
 p, ul {
-  font-size: 1.25em;
+  font-size: 1.35em;
   margin: 0 0 1rem;
 }
 a {
   color:inherit;
   text-decoration: none;
 }
-p a {
+p a:not([href^="tel"]) {
   border-bottom: 2px solid #FFD750;
-  transition: background-color .15s
+  transition: background-color .15s;
+  font-style: italic;
 }
 p a:hover, a:focus {
   background-color: rgba(255, 215, 80, .2);
@@ -132,13 +122,18 @@ li:before {
 
 }
 
+
+
 @media (max-width: 530px) {
+  body {
+    margin-top: 3vh;
+  }
   h1 {
-    font-size: 2em;
+    font-size: 2.2em;
   }
 
   p, ul {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
   ul:hover {
     color: inherit;

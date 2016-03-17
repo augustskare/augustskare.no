@@ -1,6 +1,4 @@
 {
   "name": "augustskare",
-  "dependencies": {
-    "fontfaceobserver": "^1.6.5"
-  }
+  "dependencies": {}
 }

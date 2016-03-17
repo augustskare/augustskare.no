@@ -16,17 +16,24 @@
   <body>
     <h1>August Skare</h1>
     <div class="main">
-      <p>Developer at <a href="http://bakkenbaeck.com">Bakken &amp; Bæck</a>, living in Oslo, Norway. Graduated from Norwegian School of Information Technology (now Westerdals) in 2014.</p>
-      <p>Want to get in touch? Email me at <a href="mailto:post@augustskare.no">post@augustskare.no</a> or call me (+ 47) 943 70 233.</p>
+      <p>Developer at <a href="http://bakkenbaeck.com">Bakken <span>&amp;</span> Bæck</a>, living in Oslo, Norway. Graduated from Norwegian School of Information Technology (now Westerdals) in 2014.</p>
+      <p>Want to get in touch? Email me at <a href="mailto:post@augustskare.no">post@augustskare.no</a> or call me <a href="tel:004794370233">(+ 47) 943 70 233.</a></p>
       <ul>
         <li class="instagram"><a href="http://instagram.com/augustskare">Instagram</a></li>
         <li class="twitter"><a href="http://twitter.com/augustskare">Twitter</a></li>
         <li class="github"><a href="http://github.com/augustskare">GitHub</a></li>
       </ul>
     </div>
-    <!-- build:js /app.min.js -->
-      <script src="/bower_components/fontfaceobserver/fontfaceobserver.js"></script>
-      <script src="/font.js"></script>
-    <!-- /build -->
+    <script>
+      (function(d) {
+        var config = { kitId: 'oou4poe', scriptTimeout: 2000, async: true },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function() {}, function(err) {
+          console.log(err, 'error');
+        });
+      }
+    </script>
   </body>
 </html>

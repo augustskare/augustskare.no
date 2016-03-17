@@ -6,8 +6,6 @@ self.addEventListener("install", function(event) {
     .then(function(cache) {
       return cache.addAll([
         '/',
-        '/fonts/butler_regular.woff',
-        '/fonts/butler_extrabold.woff',
         '/app.min.js'
       ]);
     })

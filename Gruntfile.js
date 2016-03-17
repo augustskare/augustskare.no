@@ -30,7 +30,6 @@ module.exports = function(grunt) {
     'cssmin',
     'processhtml',
     'htmlmin',
-    'uglify',
     'clean:afterBuild'
   ]);
 
