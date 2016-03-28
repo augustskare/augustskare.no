@@ -29,7 +29,8 @@ module.exports = function(grunt) {
     'postcss',
     'cssmin',
     'processhtml',
-    'htmlmin',
+    'uglify',
+    //'htmlmin',
     'clean:afterBuild'
   ]);
 
