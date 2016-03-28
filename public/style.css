@@ -81,6 +81,7 @@ li:hover:before {
   transform: translateX(-1.2em);
 }
 li:before {
+  content: attr(data-icon);
   opacity: 0;
   position: absolute;
   top: .05em;
@@ -88,16 +89,6 @@ li:before {
   transform: translateX(0);
   transition: opacity .2s, transform .2s;
 }
-.instagram:before {
-  content: "\01F4F7"
-}
-.twitter:before {
-  content: "\01F426"
-}
-.github:before {
-  content: "\01F527";
-}
-
 
 @media (max-width: 860px) {
   .main {
