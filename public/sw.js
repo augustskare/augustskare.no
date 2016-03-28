@@ -1,52 +1,42 @@
-var version = 1.0;
+var version = 'augustskare-v1';
 
-self.addEventListener("install", function(event) {
-  event.waitUntil(caches
-    .open(version + 'fundamentals')
-    .then(function(cache) {
-      return cache.addAll(['/']);
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(version).then((cache) => {
+      return cache.addAll([ '/' ]);
     })
-    .then(function() {})
   );
 });
 
-self.addEventListener('fetch', function(event) {
-  if (event.request.method !== 'GET') {
-    return;
-  }
-
-  event.respondWith(caches.match(event.request).then(function(cached) {
-    var networking = fetch(event.request).then(fetchedFromNetwork, unableToResolve).catch(unableToResolve);
-    return cached || networking;
-
-    function fetchedFromNetwork(resp) {
-      var copy = resp.clone();
-
-      caches.open(version + 'pages').then(function add(cache) {
-        cache.put(event.request, copy);
-      }).then(function() {});
-
-      return response;
-    }
-    function unableToResolve () {
-      return new Response('<h1>Service Unavailable</h1>', {status: 503, statusText: 'Service Unavailable', headers: new Headers({'Content-Type': 'text/html'})});
-    }
-
-  }));
-})
-
-
-self.addEventListener("activate", function(event) {
-  event.waitUntil(caches
-    .keys()
-    .then(function (keys) {
-      return Promise.all(
-        keys.filter(function (key) {
-          return !key.startsWith(version);
-        }).map(function (key) {
-          return caches.delete(key);
-        })
-      );
-    }).then(function() {})
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all( keys.filter( key => key !== version ).map( key => caches.delete(key) ));
+    })
   );
+});
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.url.indexOf('typekit') >= 0) { return; }
+
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (!cached) {
+        return fetch(event.request).then((response) => {
+          return caches.open(version).then((cache) => {
+            cache.put(event.request, response.clone());
+            return response;
+          });
+        });
+      }
+
+      return cached;
+    })
+  )
+});
+
+self.addEventListener('message', function(event) {
+  if (event.data.action === 'skipWaiting') {
+    self.skipWaiting();
+  }
 });
