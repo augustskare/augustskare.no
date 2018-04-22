@@ -1,20 +1,23 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const paths = {
   src: path.resolve(__dirname, 'source'),
   dist: path.resolve(__dirname, 'public'),
 }
 
-module.exports = (env = {}) => {
-  const ENV = env.env || 'dev';
-  const PRODUCTION = ENV === 'prod';
+const filename = (prod, ext) => `${prod ? '[name].[contenthash:5]' : '[name]'}.${ext}`;
 
+module.exports = (env = {}) => {
+  const ENV = env.mode || 'production';
+  const PRODUCTION = ENV === 'production';
+  
   return {
     context: paths.src,
     entry: {
@@ -23,26 +26,28 @@ module.exports = (env = {}) => {
     output: {
       path:  paths.dist,
       publicPath: '/',
-      chunkFilename: PRODUCTION ? '[name].[chunkhash].js' : '[name].js',
-      filename: PRODUCTION ? '[name].[chunkhash].js' : '[name].js',
+      chunkFilename: filename(PRODUCTION, 'js'),
+      filename: filename(PRODUCTION, 'js'),
     },
-    stats: {
-      colors: true,
-      reasons: true,
+    mode: ENV,
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin({
+          cache: true,
+          parallel: true,
+          sourceMap: true,
+        }),
+        new OptimizeCSSAssetsPlugin({})
+      ]
     },
     module: {
       rules: [
         {
           test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [{
-              loader: 'css-loader',
-              options: {
-                sourceMap: !PRODUCTION,
-              }
-            }]
-          })
+          use: [
+            PRODUCTION ? MiniCssExtractPlugin.loader : 'style-loader', 
+            'css-loader'
+          ]
         },
       ]
     },
@@ -61,20 +66,14 @@ module.exports = (env = {}) => {
         template: path.join(paths.src, 'index.html'),
         minify: { collapseWhitespace: true },
       }),
-      new ExtractTextPlugin({
-        filename: '[name].[chunkhash].css',
-        allChunks: true,
-        disable: !PRODUCTION,
-      }),
       new CopyWebpackPlugin([{ from: 'static' }]),
       new CleanWebpackPlugin(['public']),
       new webpack.NamedModulesPlugin(),
-    ]).concat(ENV==='prod' ? [
-      new webpack.optimize.ModuleConcatenationPlugin(),
-      new webpack.HashedModuleIdsPlugin(),
-      new UglifyJSPlugin({
-        sourceMap: true
-      }),
+    ]).concat(PRODUCTION ? [
+      new MiniCssExtractPlugin({
+        filename: filename(true, 'css'),
+        chunkFilename: filename(true, 'css'),
+      })
     ] : [])
   }
 }
