@@ -5,5 +5,5 @@
   "theme_color": "#FFD750",
   "background_color": "#F3F3F3",
   "start_url": "/",
-  "display": "minimal-ui",
+  "display": "minimal-ui"
 }
