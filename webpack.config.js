@@ -49,6 +49,17 @@ module.exports = (env = {}) => {
             'css-loader'
           ]
         },
+        {
+          test: /\.(ttf)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[hash:5].[ext]',
+              }
+            }
+          ],
+        }
       ]
     },
     devServer: {

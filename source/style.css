@@ -1,6 +1,27 @@
-body {
-  font-family: serif;
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Vesper Libre";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Vesper Libre"), local("VesperLibre-Regular"), url("./fonts/VesperLibre.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vesper Libre";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Vesper Libre"), local("VesperLibre-Bold"), url("./fonts/VesperLibre-Bold.ttf") format("truetype");
+}
+
+html {
   font-size: 100%;
+}
+
+body {
+  font-family: "Vesper Libre", serif;
   line-height: 1.4;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -14,9 +35,7 @@ body {
   width: 520px;
   max-width: 90%;
 }
-.wf-active body {
-  font-family: "minion-pro", serif;
-}
+
 .main {
   border-left: 1px solid rgba(0,0,0, .06);
   padding-left: 1rem;
@@ -26,7 +45,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   margin: 0 0 .5rem;
   padding-left: 1rem;
@@ -41,18 +60,15 @@ a {
   text-decoration: none;
 }
 p a:not([href^="tel"]) {
-  border-bottom: 2px solid #FFD750;
-  transition: background-color .15s;
+  text-decoration: underline;
+  text-decoration-color: #FFD750;
   font-style: italic;
+  transition: text-decoration-color .2s;
 }
 p a:hover, a:focus {
-  background-color: rgba(255, 215, 80, .2);
-  outline: none;
+  outline: 0;
+  text-decoration-color: #b7b7b7;
 }
-
-
-
-
 
 ul {
   position: absolute;
