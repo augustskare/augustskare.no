@@ -69,6 +69,9 @@ module.exports = (env = {}) => {
       new CopyWebpackPlugin([{ from: 'static' }]),
       new CleanWebpackPlugin(['public']),
       new webpack.NamedModulesPlugin(),
+      new webpack.DefinePlugin({
+        PRODUCTION: JSON.stringify(PRODUCTION),
+      }),
     ]).concat(PRODUCTION ? [
       new MiniCssExtractPlugin({
         filename: filename(true, 'css'),
