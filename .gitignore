@@ -2,3 +2,6 @@
 node_modules
 public
 yarn-error.log
+*.woff
+*.woff2
+source/fonts/*.css

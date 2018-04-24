@@ -1,4 +1,4 @@
-import './style.css';
+import './css/style.css';
 
 window.addEventListener('load', e => {
   if (navigator.serviceWorker && PRODUCTION) {

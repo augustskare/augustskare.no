@@ -1,19 +1,7 @@
+@import "~env/fonts.css";
+
 * {
   box-sizing: border-box;
-}
-
-@font-face {
-  font-family: "Vesper Libre";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Vesper Libre"), local("VesperLibre-Regular"), url("./fonts/VesperLibre.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Vesper Libre";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Vesper Libre"), local("VesperLibre-Bold"), url("./fonts/VesperLibre-Bold.ttf") format("truetype");
 }
 
 html {

@@ -6,6 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 const paths = {
   src: path.resolve(__dirname, 'source'),
@@ -29,6 +30,11 @@ module.exports = (env = {}) => {
       chunkFilename: filename(PRODUCTION, 'js'),
       filename: filename(PRODUCTION, 'js'),
     },
+    resolve: {
+      alias: {
+        env: path.join(paths.src, `css/${PRODUCTION ? 'prod' : 'dev'}`),
+      },
+    },
     mode: ENV,
     optimization: {
       minimizer: [
@@ -46,11 +52,11 @@ module.exports = (env = {}) => {
           test: /\.css$/,
           use: [
             PRODUCTION ? MiniCssExtractPlugin.loader : 'style-loader', 
-            'css-loader'
+            'css-loader',
           ]
         },
         {
-          test: /\.(ttf)$/,
+          test: /\.(ttf|woff|woff2)$/,
           use: [
             {
               loader: 'file-loader',
@@ -83,11 +89,17 @@ module.exports = (env = {}) => {
       new webpack.DefinePlugin({
         PRODUCTION: JSON.stringify(PRODUCTION),
       }),
+      
     ]).concat(PRODUCTION ? [
       new MiniCssExtractPlugin({
         filename: filename(true, 'css'),
         chunkFilename: filename(true, 'css'),
-      })
+      }),
+      new PreloadWebpackPlugin({
+        rel: 'preload',
+        include: 'allAssets',
+        fileBlacklist: [/\.(js|map|css|woff)$/]
+      }),
     ] : [])
   }
 }
