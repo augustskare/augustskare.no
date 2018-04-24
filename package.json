@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "webpack-dev-server --env.mode=development",
     "prod": "webpack",
-    "subset": "glyphhanger http://localhost:8080 --subset=source/fonts/VesperLibre.ttf --formats=woff,woff2 && glyphhanger --whitelist=augstkre --subset=source/fonts/VesperLibre-Bold.ttf --formats=woff,woff2",
+    "subset": "glyphhanger --US_ASCII --subset=source/fonts/VesperLibre.ttf --formats=woff,woff2 && glyphhanger --whitelist=augstkre --subset=source/fonts/VesperLibre-Bold.ttf --formats=woff,woff2",
     "build": "yarn subset && yarn webpack"
   },
   "devDependencies": {
@@ -12,6 +12,7 @@
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
+    "glyphhanger": "3.0.3",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "optimize-css-assets-webpack-plugin": "^4.0.0",
