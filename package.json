@@ -4,8 +4,8 @@
   "scripts": {
     "webpack:dev": "webpack-dev-server --env.mode=development",
     "webpack:prod": "webpack",
-    "subset": "glyphhanger --US_ASCII --subset=source/fonts/VesperLibre.ttf --formats=woff,woff2 && glyphhanger --whitelist=augstkre --subset=source/fonts/VesperLibre-Bold.ttf --formats=woff,woff2",
-    "dev": "webpack:dev",
+    "subset": "glyphhanger --US_ASCII --whitelist=æ --subset=source/fonts/VesperLibre.ttf --formats=woff,woff2 && glyphhanger --whitelist=ASaugstkre --subset=source/fonts/VesperLibre-Bold.ttf --formats=woff,woff2",
+    "dev": "yarn webpack:dev",
     "build:standalone": "yarn subset && yarn webpack:prod",
     "build": "./build.sh"
   },
