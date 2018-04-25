@@ -50,7 +50,6 @@ a {
 p a:not([href^="tel"]) {
   text-decoration: underline;
   text-decoration-color: #FFD750;
-  font-style: italic;
   transition: text-decoration-color .2s;
 }
 p a:hover, a:focus {
