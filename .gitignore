@@ -5,3 +5,4 @@ yarn-error.log
 *.woff
 *.woff2
 source/fonts/*.css
+env

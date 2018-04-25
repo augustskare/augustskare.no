@@ -2,10 +2,12 @@
   "name": "augustskare",
   "version": "2.0.0",
   "scripts": {
-    "dev": "webpack-dev-server --env.mode=development",
-    "prod": "webpack",
+    "webpack:dev": "webpack-dev-server --env.mode=development",
+    "webpack:prod": "webpack",
     "subset": "glyphhanger --US_ASCII --subset=source/fonts/VesperLibre.ttf --formats=woff,woff2 && glyphhanger --whitelist=augstkre --subset=source/fonts/VesperLibre-Bold.ttf --formats=woff,woff2",
-    "build": "yarn subset && yarn webpack"
+    "dev": "webpack:dev",
+    "build:standalone": "yarn subset && yarn webpack:prod",
+    "build": "./build.sh"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
