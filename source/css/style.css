@@ -49,13 +49,23 @@ a {
 }
 p a:not([href^="tel"]) {
   text-decoration: underline;
-  text-decoration-color: #FFD750;
   transition: text-decoration-color .2s;
 }
+
 p a:hover, a:focus {
-  outline: 0;
-  text-decoration-color: #b7b7b7;
+  color: #FFD750;
 }
+
+@supports (text-decoration-color: #FFD750) {
+  p a:not([href^="tel"]) {
+    text-decoration-color: #FFD750;
+  }
+  p a:hover, a:focus {
+    color: #2D2D2D;
+    text-decoration-color: #b7b7b7;
+  }
+}
+
 
 ul {
   position: absolute;
