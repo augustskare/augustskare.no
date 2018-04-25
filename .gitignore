@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
-build
-deploy.sh
-aws-conf.json
-bower_components
+public
+yarn-error.log
+*.woff
+*.woff2
+source/fonts/*.css
+env

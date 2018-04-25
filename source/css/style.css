@@ -1,6 +1,15 @@
-body {
-  font-family: serif;
+@import "~env/fonts.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
   font-size: 100%;
+}
+
+body {
+  font-family: "Vesper Libre", serif;
   line-height: 1.4;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -14,9 +23,7 @@ body {
   width: 520px;
   max-width: 90%;
 }
-.wf-active body {
-  font-family: "minion-pro", serif;
-}
+
 .main {
   border-left: 1px solid rgba(0,0,0, .06);
   padding-left: 1rem;
@@ -26,7 +33,7 @@ body {
 
 h1 {
   font-size: 2.5em;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   margin: 0 0 .5rem;
   padding-left: 1rem;
@@ -41,17 +48,23 @@ a {
   text-decoration: none;
 }
 p a:not([href^="tel"]) {
-  border-bottom: 2px solid #FFD750;
-  transition: background-color .15s;
-  font-style: italic;
+  text-decoration: underline;
+  transition: text-decoration-color .2s;
 }
+
 p a:hover, a:focus {
-  background-color: rgba(255, 215, 80, .2);
-  outline: none;
+  color: #FFD750;
 }
 
-
-
+@supports (text-decoration-color: #FFD750) {
+  p a:not([href^="tel"]) {
+    text-decoration-color: #FFD750;
+  }
+  p a:hover, a:focus {
+    color: #2D2D2D;
+    text-decoration-color: #b7b7b7;
+  }
+}
 
 
 ul {
