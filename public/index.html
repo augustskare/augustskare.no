@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="preload"
+      href="/recursive-2019_12_17-23_21-subset.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <title>August Skare</title>
+    <meta name="description" content="Frontend lead at Bakken &amp; Bæck" />
+    <link rel="manifest" href="/manifest.json" />
+    <style>
+      @font-face {
+        font-family: Recursive;
+        src: url("/recursive-2019_12_17-23_21-subset.woff2")
+          format("woff2-variations");
+        font-weight: 300 900;
+        font-display: swap;
+      }
+
+      body {
+        font-family: Recursive, system-ui, -apple-system, sans-serif;
+        font-variation-settings: "ital" 1;
+        line-height: 1.5;
+      }
+
+      h1 {
+        font-variation-settings: "MONO" 0.5, "wght" 800;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        max-width: 30em;
+        margin-top: 0;
+      }
+
+      a:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: blue;
+      }
+
+      ul {
+        padding-left: 0;
+        list-style: inside;
+      }
+      li {
+        margin-bottom: 0.1rem;
+      }
+
+      .vh {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+      }
+
+      @media (min-width: 25em) {
+        body {
+          font-size: 125%;
+          margin: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>August Skare</h1>
+      <p>
+        Frontend lead at
+        <a href="https://bakkenbaeck.com">Bakken &amp; Bæck</a>, living in
+        Tromsø, Norway.
+      </p>
+      <p>
+        Want to get in touch? Email me at
+        <a href="mailto:post@augustskare.no">post@augustskare.no</a> or call me
+        <a href="tel:004794370233">(+ 47) 943 70 233</a>.
+      </p>
+      <section>
+        <h2 class="vh">On social media</h2>
+        <ul>
+          <li><a href="http://instagram.com/augustskare">Instagram</a></li>
+          <li><a href="http://twitter.com/augustskare">Twitter</a></li>
+          <li><a href="http://github.com/augustskare">GitHub</a></li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
