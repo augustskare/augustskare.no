@@ -1,3 +1,5 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addFilter("htmlDateString", dateObj => {
@@ -10,13 +12,15 @@ module.exports = function(eleventyConfig) {
       .filter(({ inputPath }) => inputPath.includes("notes/"));
   });
 
+  eleventyConfig.addPlugin(pluginRss);
+
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     dir: {
-      input: "src"
-    }
+      input: "src",
+    },
   };
 };

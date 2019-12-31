@@ -1,0 +1,10 @@
+{
+  "title": "August Skare",
+  "url": "https://augustskare.no/",
+  "feed": {
+    "filename": "feed.xml",
+    "path": "/feed.xml",
+    "url": "https://augustskare.no/feed.xml",
+    "id": "https://augustskare.no/"
+  }
+}
