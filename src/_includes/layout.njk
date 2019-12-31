@@ -1,6 +1,9 @@
 ---
 title: August Skare
 ---
+{% set css %}
+  {% include "styles.css" %}
+{% endset %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,64 +22,7 @@ title: August Skare
     <title>{{ title }}</title>
     <meta name="description" content="Frontend lead at Bakken &amp; Bæck" />
     <link rel="manifest" href="/assets/manifest.json" />
-    <style>
-      @font-face {
-        font-family: Recursive;
-        src: url("/assets/recursive-2019_12_17-23_21-subset.woff2")
-          format("woff2-variations");
-        font-weight: 300 900;
-        font-display: swap;
-      }
-
-      body {
-        font-family: Recursive, system-ui, -apple-system, sans-serif;
-        font-variation-settings: "ital" 1;
-        line-height: 1.5;
-      }
-
-      h1 {
-        font-variation-settings: "MONO" 0.5, "wght" 800;
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-      }
-
-      p {
-        max-width: 30em;
-        margin-top: 0;
-      }
-
-      a:hover {
-        text-decoration: none;
-        color: #fff;
-        background-color: blue;
-      }
-
-      ul {
-        padding-left: 0;
-        list-style: inside;
-      }
-      li {
-        margin-bottom: 0.1rem;
-      }
-
-      .vh {
-        position: absolute;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        width: 1px;
-        margin: -1px;
-        padding: 0;
-        border: 0;
-      }
-
-      @media (min-width: 25em) {
-        body {
-          font-size: 125%;
-          margin: 2rem;
-        }
-      }
-    </style>
+    <style>{{ css | cssmin | safe }}</style>
   </head>
   <body>
     <h1>{{title}}</h1>
