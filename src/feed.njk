@@ -1,0 +1,29 @@
+---
+permalink: feed.xml
+---
+{% set notes = collections.notes %}
+
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <link href="{{ metadata.feedUrl }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  {% if notes | length %}
+    <updated>{{ notes | rssLastUpdatedDate }}</updated>
+  {% endif %}
+  <id>{{ metadata.url }}</id>
+  <author>
+    <name>{{ metadata.title }}</name>
+    <email>post@augustskare.no</email>
+  </author>
+  {%- for note in notes %}
+  {% set absolutePostUrl %}{{ note.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  <entry>
+    <title>{{ note.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ note.date | rssDate }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ note.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
