@@ -1,14 +1,13 @@
 @font-face {
   font-family: Recursive;
-  src: url("/assets/recursive-2019_12_17-23_21-subset.woff2")
+  src: url("/assets/recursive_VF_1.043--subset_range_english_basic.woff2")
     format("woff2-variations");
-  font-weight: 300 900;
+  font-weight: 300 1000;
   font-display: swap;
 }
 
 body {
   font-family: Recursive, system-ui, -apple-system, sans-serif;
-  font-variation-settings: "ital" 1;
   line-height: 1.5;
 }
 
@@ -35,6 +34,16 @@ ul {
 }
 li {
   margin-bottom: 0.1rem;
+}
+
+.likes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.likes li:not(:last-of-type) {
+  border-bottom: 1px solid;
 }
 
 .vh {
