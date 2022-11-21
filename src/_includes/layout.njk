@@ -1,28 +1,15 @@
 ---
 title: August Skare
 ---
-{% set css %}
-  {% include "styles.css" %}
-{% endset %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta http-equiv="cleartype" content="on" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="preload"
-      href="/assets/recursive-2019_12_17-23_21-subset.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
     <title>{{ title }}</title>
-    <meta name="description" content="Frontend lead at Bakken &amp; Bæck" />
     <link rel="manifest" href="/assets/manifest.json" />
-    <style>{{ css | cssmin | safe }}</style>
   </head>
   <body>
     <h1>{{title}}</h1>
