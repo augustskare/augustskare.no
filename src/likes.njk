@@ -10,7 +10,7 @@ layout: layout.njk
   <li>
     <article>
       <h2><a href="{{ item.link }}" rel="noopener">{{ item.title }}</a></h2>
-      <p>{{ item.meta.host }}</p>
+      <p>{{ item.link | host }}</p>
     </article>
   </li>
   {% endfor %}

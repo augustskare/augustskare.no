@@ -1,6 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const CleanCSS = require("clean-css");
-const feedbinStars = require("eleventy-plugin-feedbin-stars");
+const { default: feedbinStars } = require("eleventy-plugin-feedbin-stars");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(feedbinStars, {
@@ -12,6 +12,9 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.addFilter("cssmin", css => {
     return new CleanCSS({}).minify(css).styles;
+  });
+  eleventyConfig.addFilter("host", url => {
+    return new URL(url).host;
   });
 
   eleventyConfig.addCollection("notes", collection => {
