@@ -8,9 +8,8 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-plugin-rss": "^1.2.0",
     "clean-css": "^4.2.1",
-    "eleventy-plugin-feedbin-stars": "^2.0.0"
+    "eleventy-plugin-feedbin-stars": "^2.0.1"
   },
   "devDependencies": {
     "prettier": "2.7.1"

@@ -1,17 +1,17 @@
 ---
-title: Likes
 layout: layout.njk
 ---
 
-<p>Articles I've liked</p>
-
+<p class="lead">Articles I've liked</p>
 <ul class="likes">
   {% for item in collections.feedbinStars %}
-  <li>
-    <article>
-      <h2><a href="{{ item.link }}" rel="noopener">{{ item.title }}</a></h2>
-      <p>{{ item.link | host }}</p>
-    </article>
-  </li>
+    <li>
+      <article>
+        <h2>
+          <a href="{{ item.link }}" rel="noopener">{{ item.title }}</a>
+        </h2>
+        <p>{{ item.link | host }}</p>
+      </article>
+    </li>
   {% endfor %}
 </ul>

@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "Hubot Sans";
+  src:
+    url("/assets/hubot-sans.woff2") format("woff2 supports variations"),
+    url("/assets/hubot-sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+
+
+:root {
+  --mauve1: hsl(300, 20.0%, 99.0%);
+  /* --mauve2: hsl(300, 7.7%, 97.5%);
+  --mauve3: hsl(294, 5.5%, 95.3%);
+  --mauve4: hsl(289, 4.7%, 93.3%);
+  --mauve5: hsl(283, 4.4%, 91.3%); */
+  --mauve6: hsl(278, 4.1%, 89.1%);
+ /*  --mauve7: hsl(271, 3.9%, 86.3%);
+  --mauve8: hsl(255, 3.7%, 78.8%);
+  --mauve9: hsl(252, 4.0%, 57.3%);
+  --mauve10: hsl(253, 3.5%, 53.5%); */
+  --mauve11: hsl(252, 4.0%, 44.8%);
+  --mauve12: hsl(260, 25.0%, 11.0%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --mauve1: hsl(246, 6.0%, 9.0%);
+    /* --mauve2: hsl(240, 5.1%, 11.6%);
+    --mauve3: hsl(241, 5.0%, 14.3%);
+    --mauve4: hsl(242, 4.9%, 16.5%);
+    --mauve5: hsl(243, 4.9%, 18.8%); */
+    --mauve6: hsl(244, 4.9%, 21.5%);
+   /*  --mauve7: hsl(245, 4.9%, 25.4%);
+    --mauve8: hsl(247, 4.8%, 32.5%);
+    --mauve9: hsl(252, 4.0%, 45.2%);
+    --mauve10: hsl(247, 3.4%, 50.7%); */
+    --mauve11: hsl(253, 4.0%, 63.7%);
+    --mauve12: hsl(256, 6.0%, 93.2%);
+  }
+}
+
+.enode {
+  --color: #009b0f;
+}
+
+.bb {
+  --color: #000;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+html {
+  color: var(--mauve12);
+  background-color: var(--mauve1);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Hubot Sans", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 1rem;
+}
+
+p {
+  max-width: 40ch;
+  margin: 0;
+}
+
+em {
+  font-weight: 500;
+  font-stretch: 125%;
+  font-style: normal;
+}
+
+ul, section > ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 750;
+  font-stretch: 125%;
+  margin: 0;
+}
+
+small {
+  color: var(--mauve11);
+  font-size: .75em;
+  font-weight: 500;
+  display: block;
+}
+
+h2, h3 {
+  font-weight: 700;
+  margin: 0 0 .5em;
+}
+
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.lead {
+  font-size: 1.25em;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--color);
+}
+
+
+main {
+  padding-block: 1rem;
+}
+
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  background-color: currentColor;
+  border-radius: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo svg {
+  color: var(--mauve1);
+}
+
+h3 a {
+  text-decoration: none;
+  display: flex;
+  gap: .5rem;
+  align-items: flex-end;
+}
+
+
+
+section > ol > li {
+  margin-bottom: 1rem;
+} 
+
+article ol {
+  list-style: disc inside;
+  padding: 0;
+}
+
+article li:not(:last-of-type) {
+  margin-bottom: .5rem;
+}
+
+
+footer ul {
+  display: flex;
+  gap: 1rem;
+}
+
+footer a {
+  color: var(--mauve11);
+  text-decoration: none;
+}
+
+footer a:hover {
+  font-variation-settings: "ital" 10;
+}
+
+
+.likes {
+  margin-block-start: 1rem;
+}
+.likes h2 {
+  margin-block-end: .25em;
+}
+.likes li:not(:last-of-type) {
+  padding-block-end: .5rem;
+  margin-block-end: .5rem;
+  border-block-end: 1px solid var(--mauve6);
+}
