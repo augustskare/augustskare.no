@@ -2,16 +2,12 @@
   "name": "augustskare.no",
   "private": true,
   "scripts": {
-    "dev": "eleventy --serve",
-    "build": "eleventy",
-    "format": "prettier --write 'src/**/*.{js,css}'"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "clean-css": "^4.2.1",
-    "eleventy-plugin-feedbin-stars": "^2.0.1"
+    "dev": "http-server site",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "devDependencies": {
-    "prettier": "2.7.1"
+    "http-server": "^14.1.1",
+    "oxfmt": "^0.62.0"
   }
 }
