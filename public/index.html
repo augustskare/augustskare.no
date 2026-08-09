@@ -5,70 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <title>August Skare</title>
-    <style>
-      @font-face {
-        font-family: "Hubot Sans";
-        src:
-          url("/hubot.woff2") format("woff2 supports variations"),
-          url("/hubot.woff2") format("woff2-variations");
-        font-weight: 200 900;
-        font-stretch: 75% 125%;
-        font-display: swap;
-      }
-      :root {
-        --mauve1: hsl(300, 20%, 99%);
-        --mauve6: hsl(278, 4.1%, 89.1%);
-        --mauve11: hsl(252, 4%, 44.8%);
-        --mauve12: hsl(260, 25%, 11%);
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --mauve1: hsl(246, 6%, 9%);
-          --mauve6: hsl(244, 4.9%, 21.5%);
-          --mauve11: hsl(253, 4%, 63.7%);
-          --mauve12: hsl(256, 6%, 93.2%);
-        }
-      }
-      *,
-      :before,
-      :after {
-        box-sizing: border-box;
-      }
-      html {
-        color: var(--mauve12);
-        background-color: var(--mauve1);
-        -webkit-text-size-adjust: 100%;
-      }
-      body {
-        font-family:
-          "Hubot Sans",
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          Oxygen,
-          Ubuntu,
-          Cantarell,
-          "Open Sans",
-          "Helvetica Neue",
-          sans-serif;
-        margin: 1rem;
-      }
-      h1 {
-        font-size: 1.2em;
-      }
-      h1,
-      h2,
-      h3 {
-        font-weight: 600;
-      }
-      h2,
-      h3,
-      p {
-        font-size: 1em;
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <header>

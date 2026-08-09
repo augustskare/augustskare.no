@@ -1,13 +1,20 @@
 {
   "name": "augustskare.no",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "http-server site",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check"
   },
   "devDependencies": {
-    "http-server": "^14.1.1",
-    "oxfmt": "^0.62.0"
+    "@cloudflare/workers-types": "^5.20260809.1",
+    "oxfmt": "^0.62.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.120.0"
   }
 }

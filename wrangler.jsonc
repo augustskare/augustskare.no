@@ -1,0 +1,23 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "augustskare-no",
+  "main": "./src/index.ts",
+  "compatibility_date": "2026-08-08",
+  // Explicit: adding a `routes` block at cutover would otherwise silently turn the
+  // workers.dev subdomain off, and that subdomain is how the Worker gets verified
+  // before it touches the apex.
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // Mandatory, not an optimisation. Since compatibility date 2025-04-01,
+    // `assets_navigation_prefers_asset_serving` is on by default: with
+    // `not_found_handling` set, a browser *navigation* to a path with no matching
+    // asset is answered by 404.html and the Worker is never invoked — while
+    // fetch() from JS still reaches it. Listing the path here routes it to the
+    // Worker before that logic runs.
+    "run_worker_first": ["/bookshelf", "/bookshelf/*"],
+  },
+}
