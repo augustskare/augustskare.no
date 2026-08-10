@@ -42,11 +42,14 @@ Open:
 
 Built directly in `src/render.ts` rather than as a throwaway prototype. Open for revision.
 
-- Entry markup: `<li>Title <small class="shelf-author">Author</small></li>`, borrowing the
-  `<small>`-for-secondary-text idiom from the work-experience list on the homepage.
+- Entry markup: `<li>Title <small>Author</small></li>`, borrowing the `<small>`-for-secondary-text
+  idiom from the work-experience list on the homepage. **No class attributes anywhere.**
 - "Reading now" is a `<ul>` — two books read at once are not a sequence. Year lists are
   `<ol reversed="reversed">`, matching the homepage.
-- Own masthead: `<h1>Bookshelf</h1>` with a back-link to `/`, since there is no nav.
-- New CSS is two rules (`.shelf-year`, `.shelf-author`), both just `--mauve11` for secondary text.
+- Header, per the author: the name comes first as a **plain link** to `/` — not a heading, since
+  this is not the index — and the page title is the `<h1>` beneath it. `public/404.html` follows
+  the same pattern.
+- **No new CSS.** An earlier version added `.shelf-year` and `.shelf-author`; both were removed at
+  the author's instruction, and the page now uses only what `style.css` already had.
 - Error copy links `atproto.com` rather than a BookHive profile. **Least confident choice here** —
   a reader hitting the error page probably wants the books, not a protocol homepage.

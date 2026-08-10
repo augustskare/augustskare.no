@@ -28,8 +28,8 @@ function page(main: string): string {
   </head>
   <body>
     <header>
+      <a href="/">August Skare</a>
       <h1>Bookshelf</h1>
-      <p><a href="/">August Skare</a></p>
     </header>
     <main>
 ${main}
@@ -43,9 +43,7 @@ function items(books: Entry[]): string {
   return books
     .map(
       (book) =>
-        `          <li>${escapeHtml(book.title)} <small class="shelf-author">${escapeHtml(
-          book.author,
-        )}</small></li>`,
+        `          <li>${escapeHtml(book.title)} <small>${escapeHtml(book.author)}</small></li>`,
     )
     .join("\n");
 }
@@ -66,7 +64,7 @@ ${items(shelf.reading)}
 
   for (const group of shelf.years) {
     sections.push(`      <section>
-        <h2 class="shelf-year">${escapeHtml(group.year)}</h2>
+        <h2>${escapeHtml(group.year)}</h2>
         <ol reversed="reversed">
 ${items(group.books)}
         </ol>

@@ -38,8 +38,10 @@ written by [BookHive](https://bookhive.buzz). Hosting is Cloudflare, currently P
 **Data facts** (sampled 2026-08-09, 58 records)
 
 - `status`: `#finished` 39, `#wantToRead` 17, `#reading` 2. Only finished and reading are shown.
-- Finished by year: 2026 (8), 2025 (12), 2024 (9), 2023 (9). One finished book,
-  _Ut og stjæle hester_, has no `finishedAt` and is omitted.
+- Finished by year, **as of 2026-08-10**: 2026 (8), 2025 (12), 2024 (9), 2023 (10) — 39 books,
+  none omitted. On 2026-08-09 _Ut og stjæle hester_ had no `finishedAt` and was dropped; it has
+  since been given a 2023 date at source, which was Q7's preferred fix. **The omission rule still
+  stands** and is still tested — there is simply no book hitting it today.
 - `authors` is always a single plain string. `createdAt` is worthless — everything was imported
   on one day.
 - `com.atproto.repo.listRecords` is public and unauthenticated. `cover`, `stars`,

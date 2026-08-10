@@ -68,14 +68,3 @@ h3,
 p {
   font-size: 1em;
 }
-
-/* Bookshelf */
-
-.shelf-year {
-  color: var(--mauve11);
-  font-variant-numeric: tabular-nums;
-}
-
-.shelf-author {
-  color: var(--mauve11);
-}
