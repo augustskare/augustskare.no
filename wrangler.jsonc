@@ -18,6 +18,10 @@
     // asset is answered by 404.html and the Worker is never invoked — while
     // fetch() from JS still reaches it. Listing the path here routes it to the
     // Worker before that logic runs.
-    "run_worker_first": ["/bookshelf", "/bookshelf/*"],
+    //
+    // Only the paths the router actually answers are listed. Anything else —
+    // /style.css, and every path with no route, /bookshelf/whatever included — is
+    // left to the asset layer, which serves the file or 404.html.
+    "run_worker_first": ["/", "/bookshelf"],
   },
 }

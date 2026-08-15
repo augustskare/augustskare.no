@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { router, SHELF_CACHE_CONTROL } from "./router";
+import { CACHE_CONTROL, router } from "./router";
 import { STATUS_FINISHED } from "./shelf";
 
 /** Enough of plc.directory + listRecords to get through a render. */
@@ -25,6 +25,20 @@ afterEach(() => {
 // No Cache API, no ExecutionContext, no bindings: the router is reachable with a
 // bare Request, which is the point of keeping Cloudflare out of it.
 describe("router", () => {
+  it("renders the home page at the root", async () => {
+    const response = await router.fetch("https://augustskare.no/");
+    const body = await response.text();
+
+    expect(response.status).toBe(200);
+    expect(response.headers.get("content-type")?.toLowerCase()).toBe("text/html; charset=utf-8");
+    expect(response.headers.get("cache-control")).toBe(CACHE_CONTROL);
+    expect(response.headers.get("cache-tag")).toBe("home");
+    // The page the asset layer used to serve, now built here.
+    expect(body).toContain("<h1>August Skare</h1>");
+    expect(body).toContain("Work experience");
+    expect(body.startsWith("<!doctype html>")).toBe(true);
+  });
+
   it("renders the shelf", async () => {
     stubAtproto([
       {
@@ -38,7 +52,7 @@ describe("router", () => {
     const response = await router.fetch("https://augustskare.no/bookshelf");
 
     expect(response.status).toBe(200);
-    expect(response.headers.get("content-type")).toBe("text/html; charset=utf-8");
+    expect(response.headers.get("content-type")?.toLowerCase()).toBe("text/html; charset=utf-8");
     expect(await response.text()).toContain("Doppler");
   });
 
@@ -48,8 +62,8 @@ describe("router", () => {
 
     const response = await router.fetch("https://augustskare.no/bookshelf");
 
-    expect(response.headers.get("cache-control")).toBe(SHELF_CACHE_CONTROL);
-    expect(SHELF_CACHE_CONTROL).toBe("public, max-age=60, s-maxage=31536000");
+    expect(response.headers.get("cache-control")).toBe(CACHE_CONTROL);
+    expect(CACHE_CONTROL).toBe("public, max-age=60, s-maxage=31536000");
     expect(response.headers.get("cache-tag")).toBe("bookshelf");
   });
 
