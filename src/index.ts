@@ -1,11 +1,41 @@
-/**
- * The Cloudflare half of the site: the Worker entry point, and nothing else. What
- * gets served is router.ts's business, and how long it is kept is decided by the
- * Cache-Control headers the router sets — Cloudflare's own HTTP cache honours
- * `s-maxage` at the edge without this file doing anything about it.
- */
+import { createHtmlResponse } from "remix/response/html";
+import type { SafeHtml } from "remix/html-template";
+import { createRouter } from "remix/router";
 
-import { router } from "./router";
+import { fetchBookRecords } from "./utils/atproto";
+import { toShelf } from "./utils/shelf";
+import { route, get } from "remix/routes";
+
+import home from "./routes/home";
+import bookshelf from "./routes/bookshelf";
+
+export const routes = route({
+  home: get("/"),
+  bookshelf: get("/bookshelf"),
+});
+
+export const router = createRouter();
+
+router.map(routes, {
+  actions: {
+    home: () => htmlResponse(home),
+    bookshelf: async () => {
+      const shelf = toShelf(await fetchBookRecords());
+      return htmlResponse(
+        bookshelf([
+          { title: "Currently reading", books: shelf.reading },
+          ...shelf.years.map((e) => ({ title: e.year, books: e.books })),
+        ]),
+      );
+    },
+  },
+});
+
+function htmlResponse(body: SafeHtml) {
+  return createHtmlResponse(body, {
+    headers: { "cache-control": "public, max-age=60, s-maxage=31536000" },
+  });
+}
 
 export default {
   fetch(request: Request): Promise<Response> {

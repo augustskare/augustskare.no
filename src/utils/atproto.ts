@@ -3,7 +3,7 @@
  * `listRecords` is public.
  */
 
-import type { BookRecord } from "./shelf";
+import type { BookRecord } from "./utils/shelf";
 
 const DID = "did:plc:5zy6g7sxhhudcpyegms4l2n3";
 const COLLECTION = "buzz.bookhive.book";
