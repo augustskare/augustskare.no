@@ -18,7 +18,7 @@ export default layout(html`
     <ol reversed="reversed">
       <li>
         <article>
-          <h3><a href="https://enode.com">Enode</a> <small>Present</small></h3>
+          <h3><a href="https://enode.com">Enode</a></h3>
           <p>
             <em>Senior software engineer</em>, from
             <time datetime="2021-09">September 2021</time>
@@ -30,7 +30,6 @@ export default layout(html`
         <article>
           <h3>
             <a href="https://bakkenbaeck.com">Bakken & Bæck</a>
-            <small>April 2013 - September 2021</small>
           </h3>
           <ol reversed="reversed">
             <li>
@@ -56,10 +55,7 @@ export default layout(html`
     <ol reversed="reversed">
       <li>
         <article>
-          <h3>
-            Norwegian School of Information Technology
-            <small>April 2013 - May 2018</small>
-          </h3>
+          <h3>Norwegian School of Information Technology</h3>
           <p>
             <em>Bachelor’s degree in Computer Science</em>, from
             <time datetime="2013-04">April 2013</time>
