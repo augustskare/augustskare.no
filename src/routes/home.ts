@@ -53,13 +53,20 @@ export default layout(html`
 
   <section>
     <h2>Education</h2>
-    <ol>
+    <ol reversed="reversed">
       <li>
-        <em>Bachelor of Science in Computer Science</em> at Norwegian School of Information
-        Technology, from
-        <time datetime="2013-04">April 2013</time>
-        to
-        <time datetime="2018-05">May 2018</time>
+        <article>
+          <h3>
+            Norwegian School of Information Technology
+            <small>April 2013 - May 2018</small>
+          </h3>
+          <p>
+            <em>Bachelor’s degree in Computer Science</em>, from
+            <time datetime="2013-04">April 2013</time>
+            to
+            <time datetime="2018-05">May 2018</time>
+          </p>
+        </article>
       </li>
     </ol>
   </section>
