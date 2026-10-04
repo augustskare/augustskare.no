@@ -61,7 +61,7 @@ export default layout(html`
             <small>April 2013 - May 2018</small>
           </h3>
           <p>
-            <em>Bachelor of Science in Computer Science</em>, from
+            <em>Bachelor’s degree in Computer Science</em>, from
             <time datetime="2013-04">April 2013</time>
             to
             <time datetime="2018-05">May 2018</time>
